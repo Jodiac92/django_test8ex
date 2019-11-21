@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+부서정보<br>
+<table style="width: 80%">
+	<tr style="background-color: cyan">
+		<th>부서번호</th><th>부서명</th><th>지역명</th><th>부서전화</th>
+	</tr>
+	{% if buser %}
+		{% for b in buser %}
+		<tr>
+			<td>{{b.buser_no}}</td>
+			<td><a href="/total/jikwon?buser_no={{b.buser_no}}">{{b.buser_name}}</a></td>
+			<td>{{b.buser_loc}}</td>
+			<td>{{b.buser_tel}}</td>
+		</tr>
+		{% endfor %}
+	{% else %}
+		<tr><td colspan="4">자료가 없습니다</td></tr>
+	{% endif %}
+	</table>
+</body>
+</html>

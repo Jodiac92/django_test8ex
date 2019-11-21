@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+고객정보<br>
+<table style="width: 80%">
+	<tr style="background-color: cyan">
+		<th>고객번호</th><th>고객명</th><th>고객전화</th><th>성별</th>
+	</tr>
+	{% if gogek %}
+		{% for g in gogek %}
+		<tr>
+			<td>{{g.gogek_no}}</td>
+			<td><a href="/total/gogek?jikwon_no={{g.gogek_damsano}}">{{g.gogek_name}}</a></td>
+			<td>{{g.gogek_tel}}</td>
+			<td>{{g.gogek_jumin}}</td>
+		</tr>
+		{% endfor %}
+	{% else %}
+		<tr><td colspan="3">자료가 없습니다</td></tr>
+	{% endif %}
+</table>
+</body>
+</html>
